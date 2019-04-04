@@ -12,11 +12,16 @@ dates.each{|d| dates_total[d] +=  1}
 
 chart.labels = {}
 index = 0
-data
+data = [] 
 dates_total.each do |year, freq|
 	chart.labels[index] = year
 	index += 1
+	data << freq
 end
 
-puts(chart.labels)
- 
+puts(data)
+
+chart.data :commit ,data
+chart.write('out.png') 
+#puts(chart.labels)
+#puts(data)
