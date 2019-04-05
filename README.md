@@ -6,4 +6,6 @@ to use the srcipt
 
 ```plotter.rb [dir_of_repo] [outputfile] ```
 
-Format: ![](repo.png)
+Results from using this script on this repo a few commits ago
+
+![](repo.png)
