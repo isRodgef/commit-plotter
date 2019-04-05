@@ -2,8 +2,10 @@ require 'git'
 require 'logger'
 require 'gruff'
  
+
+ 
 chart =  Gruff:: Line.new 
-g  = Git.open('.', :log => nil)#Logger.new(STDOUT))
+g  = Git.open(ARGV[0], :log => nil)#Logger.new(STDOUT))
 
 dates = g.log.map{|commit| commit.author.date.strftime("%m-%d-%y")}
 
@@ -19,9 +21,9 @@ dates_total.each do |year, freq|
 	data << freq
 end
 
-puts(data)
+
 
 chart.data :commit ,data
-chart.write('out.png') 
+chart.write(ARGV[1]) 
 #puts(chart.labels)
 #puts(data)
